@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Register - Goldenkat Bank</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Create your Goldenkat account</h2>
+
+    <form th:action="@{/register}" th:object="${registrationRequest}" method="post">
+        <label>Username</label>
+        <input type="text" th:field="*{username}" required>
+
+        <label>Password</label>
+        <input type="password" th:field="*{password}" required>
+
+        <label>Full name</label>
+        <input type="text" th:field="*{fullName}" required>
+
+        <label>Email</label>
+        <input type="email" th:field="*{email}" required>
+
+        <button class="btn" type="submit">Register</button>
+    </form>
+
+    <p>Already registered? <a th:href="@{/login}">Login</a></p>
+</div>
+</body>
+</html>
