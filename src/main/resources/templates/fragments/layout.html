@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${pageTitle} ?: 'Goldenkat Bank'">Goldenkat Bank</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div><strong>Goldenkat Banks LLC</strong> - Toronto, ON</div>
+    <div>
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/transactions}">Transactions</a>
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+</div>
+
+<div class="container" th:fragment="content">
+    <!-- page content -->
+</div>
+
+</body>
+</html>
