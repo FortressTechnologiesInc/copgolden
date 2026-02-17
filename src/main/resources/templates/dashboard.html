@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard - Goldenkat Bank</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="navbar">
+    <div><strong>Goldenkat Banks LLC</strong></div>
+    <div>
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/transactions}">Transactions</a>
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2 th:text="'Welcome, ' + ${user.fullName} + '!'">Welcome</h2>
+
+    <h3>Your accounts</h3>
+    <table>
+        <thead>
+        <tr>
+            <th>Account #</th>
+            <th>Currency</th>
+            <th>Balance</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="acc : ${accounts}">
+            <td th:text="${acc.accountNumber}">GK-XXXX</td>
+            <td th:text="${acc.currency}">CAD</td>
+            <td th:text="${acc.balance}">0.00</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
